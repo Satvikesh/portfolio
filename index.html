@@ -603,6 +603,7 @@
                     <div class="project-pattern"></div>
                 </div>
                 <div class="project-content">
+                   <a href="http://127.0.0.1:5500/reale.html" style="text-decoration:none" target="_blank" rel="noopener noreferrer"><h3> Real Estate </h3></a> 
                     <p>A complete on buying,selling and renting properties.</p>
                     <div class="project-tags">
                         <span class="tag">Branding</span>
@@ -618,7 +619,6 @@
                     <div class="project-pattern"></div>
                 </div>
                 <div class="project-content">
-                   <a href="http://127.0.0.1:5500/pp.html"><h3>Portfolio Redesign</h3> </a> 
                    <a href="http://127.0.0.1:5500/pp.html" style="text-decoration:none" target="_blank" rel="noopener noreferrer"> <h3>Portfolio Redesign</h3> </a> 
                     <p>It's a personal Portfolio of mine.</p>
                     <div class="project-tags">
@@ -729,15 +729,15 @@
             <form id="contactForm">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" required></textarea>
+                    <textarea id="message" name="message" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
             </form>
@@ -746,12 +746,12 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://github.com/Satvikesh" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/satvikesh-reddy-guttapati-81b5ab312/" target="_blank">LinkedIn</a>
-            <a href="https://x.com/Satvikreddie" target="_blank">Twitter</a>
-            <a href="https://www.instagram.com/satvikreddyg_/?next=%2F&hl=en">Instagram</a>
+            <a href="https://github.com/Satvikesh" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/satvikesh-reddy-guttapati-81b5ab312/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://x.com/Satvikreddie" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.instagram.com/satvikreddyg_/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
-        <p>&copy; 2025 Satvikesh</p>
+        <p>&copy; <span id="year"></span> Satvikesh</p>
     </footer>
 
     <script>
@@ -811,6 +811,9 @@
         projectCards.forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
         });
+
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
